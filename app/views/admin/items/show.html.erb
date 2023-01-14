@@ -1,0 +1,66 @@
+<div class="row justify-content-center">
+  <div class="col-md-8 offset-md-1">
+    <h5 class="m-4">商品詳細</h5>
+  </div>
+</div>
+
+<div class="container m-5">
+  <div class="row justify-content-center">
+      <div class="col-lg-4">
+        <%= image_tag @item.image, size: "300x200" %>
+      </div>
+      <div class="col-lg-8">
+      <table class="table table-borderless">
+        <tbody>
+          <tr>
+            <td class="col-lg-3"><%= label :item_name, "商品名" %></td>
+            <td><%= @item.name %></td>
+          </tr>
+          <tr>
+            <td class="col-lg-3"><%= label :item_introduction, "商品説明" %></td>
+            <td><%= @item.introduction %></td>
+          </tr>
+          <tr>
+            <td class="col-lg-3"><%= label :item_genre, "ジャンル" %></td>
+            <td><%= @item.genre.name %></td>
+          </tr>
+          <tr>
+            <td class="col-lg-3"><%= label :item_price, "税込価格""(税抜価格)" %></td>
+            <td><%= @item.price %></td>
+          </tr>
+          <tr>
+            <td class="col-lg-3"><%= label :item_os "OS" %></td>
+            <td><%= @item.os %></td>
+          </tr>
+          <tr>
+            <td class="col-lg-3"><%= label :item_cpu, "CPU" %></td>
+            <td><%= @item.cpu %></td>
+          </tr>
+          <tr>
+            <td class="col-lg-3"><%= label :item_graphics, "グラフィック" %></td>
+            <td><%= @item.graphics %></td>
+          </tr>
+          <tr>
+            <td class="col-lg-3"><%= label :item_memory, "メモリ" %></td>
+            <td><%= @item.memory %></td>
+          </tr>
+          <tr>
+            <td class="col-lg-3"><%= label :item_storage, "ストレージ" %></td>
+            <td><%= @item.storage %></td>
+          </tr>
+          <tr>
+            <td class="col-lg-3"><%= label :item_status, "販売ステータス" %></td>
+            <td class="text-success">
+            <% if @item.is_active == true %>
+              販売中
+            <% else %>
+              販売停止中
+            <% end %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <%= link_to "編集する", edit_admin_item_path(@item.id), class: "btn btn-sm btn-success" %>
+  </div>
+</div>
