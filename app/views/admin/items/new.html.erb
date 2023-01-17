@@ -50,21 +50,13 @@
         <td><%= f.text_field :storage, :size=>"30" %></td>
       </tr>
       <tr>
-        <td><%= f.label :sales_status, "販売ステータス" %></td>
+        <td></td>
         <td>
-          <%= f.radio_button :is_active, true %>
-          <%= f.label :is_active, "販売中", class: "text-active" %>
-          <%= f.radio_button :is_active, false %>
-          <%= f.label :is_active, "販売停止中", class: "text-active" %>
+          <%= f.submit '新規登録', class: "btn btn-sm btn-success" %>
         </td>
-      </tr>
-      <tr style="display: none;" id="dammy">
-        <td><%= f.label :item_storage, "ダミー" %></td>
-        <td><%= f.text_field :storage, :size=>"30" %></td>
       </tr>
     </tbody>
   </table>
-  <div><%= f.submit '新規登録' %></div>
   <% end %>
   </div>
 </div>
@@ -75,7 +67,7 @@
     switch(value){
       case "1":
         $("#os_input").hide();
-        $("#dammy").show();
+        $("#dammy").show()
         break;
     }
   })
