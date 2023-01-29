@@ -20,7 +20,7 @@
 
 <div class="container">
   <div class="row justify-content-center top-50">
-    <div class="genre-text col-md-8">
+    <div class="genre-text col-md-7">
       <table class="table">
         <tbody>
           <thead>
@@ -31,8 +31,11 @@
           </thead>
           <% @genres.each do |genre| %>
             <tr>
-              <td><%= genre.name %></td>
-              <td><%= link_to "編集する", edit_admin_genre_path(genre), class: "btn btn-sm btn-success" %></td>
+              <td class="col-lg-5"><%= genre.name %></td>
+              <td class="col-lg-3">
+                <%= link_to "編集する", edit_admin_genre_path(genre), class: "btn btn-sm btn-success" %>
+                <%= link_to "削除する", admin_genre_path(genre), class: "btn btn-sm btn-danger", method: :delete, "data-confirm" => "削除しますか?" %>
+              </td>
             </tr>
           <% end %>
         </tbody>

@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     get 'homes/top' => 'homes#top'
     resources :orders, only: [:show, :update]
     resources :customers, only: [:index, :show, :edit, :update]
-    resources :genres, only: [:index, :edit, :create, :update]
+    resources :genres, only: [:index, :edit, :create, :update, :destroy]
     resources :items, only: [:new, :index, :show, :edit, :create, :update]
     resources :order_details, only: [:update]
   end
@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   namespace :public do
     get 'homes/top' => 'homes#top'
     get 'homes/about'
+    get "search" => "searches#search"
     get 'customers/unsubscribe'
     patch 'customers/withdraw' => 'customers#withdraw'
     post 'orders/confirmation' => 'orders#confirmation'

@@ -4,19 +4,13 @@
   </div>
 </div>
     
-<div class="row ">
-  <div class="col-md-4 offset-md-1">
+<div class="row justify-content-center">
+  <div class="col-md-6">
     <%= form_with model: @genre, url: admin_genre_path do |f| %>
     <table class="table table-borderless">
       <td><%= f.label :genre_name, "ジャンル名" %></td>
       <td><%= f.text_field :name %></td>
-      <td>
-        <%= f.radio_button :code, true %>
-        <%= f.label :code, "code1", class: "text-active" %>
-        <%= f.radio_button :code, false %>
-        <%= f.label :code, "code2", class: "text-active" %>
-      </td>
-      <td><%= f.submit '変更を保存' %></td>
+      <td><%= f.submit '変更を保存', class: "btn btn-sm btn-success" %></td>
     </table>
       <% end %>
   </div>

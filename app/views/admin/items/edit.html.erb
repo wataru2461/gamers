@@ -31,25 +31,89 @@
             <td><%= f.label :item_price, "税抜価格" %></td>
             <td><%= f.text_field :price, :size=>"30" %>円</td>
           </tr>
-          <tr>
+          <tr id="os_input">
             <td><%= f.label :item_os, "OS" %></td>
             <td><%= f.text_field :os, :size=>"30" %></td>
           </tr>
-          <tr>
+          <tr id="cpu_input">
             <td><%= f.label :item_cpu, "CPU" %></td>
             <td><%= f.text_field :cpu, :size=>"30" %></td>
           </tr>
-          <tr>
+          <tr id="graphic_input">
             <td><%= f.label :item_graphics, "グラフィック" %></td>
             <td><%= f.text_field :graphics, :size=>"30" %></td>
           </tr>
-          <tr>
+          <tr id="memory_input">
             <td><%= f.label :item_memory, "メモリ" %></td>
             <td><%= f.text_field :memory, :size=>"30" %></td>
           </tr>
-          <tr>
+          <tr id="storage_input">
             <td><%= f.label :item_storage, "ストレージ" %></td>
             <td><%= f.text_field :storage, :size=>"30" %></td>
+          </tr>
+          <tr id="connection_input">
+            <td><%= f.label :item_connection, "接続" %></td>
+            <td><%= f.text_field :connection, :size=>"30" %></td>
+          </tr>
+          <tr id="resolution_input">
+            <td><%= f.label :item_resolution, "解像度" %></td>
+            <td><%= f.text_field :resolution, :size=>"30" %></td>
+          </tr>
+          <tr id="polling_rate_input">
+            <td><%= f.label :item_polling_rate, "ポーリングレート" %></td>
+            <td><%= f.text_field :polling_rate, :size=>"30" %></td>
+          </tr>
+          <tr id="size_input">
+            <td><%= f.label :item_size, "サイズ" %></td>
+            <td><%= f.text_field :size, :size=>"30" %></td>
+          </tr>
+          <tr id="memory_bus_input">
+            <td><%= f.label :item_memory_bus, "メモリーバス" %></td>
+            <td><%= f.text_field :memory_bus, :size=>"30" %></td>
+          </tr>
+          <tr id="memory_type_input">
+            <td><%= f.label :item_memory_type, "メモリータイプ" %></td>
+            <td><%= f.text_field :memory_type, :size=>"30" %></td>
+          </tr>
+          <tr id="core_clock_input">
+            <td><%= f.label :item_core_clock, "コアクロック" %></td>
+            <td><%= f.text_field :core_clock, :size=>"30" %></td>
+          </tr>
+          <tr id="memory_clock_input">
+            <td><%= f.label :item_memory_clock, "メモリークロック" %></td>
+            <td><%= f.text_field :memory_clock, :size=>"30" %></td>
+          </tr>
+          <tr id="monitor_output_input">
+            <td><%= f.label :item_monitor_output, "モニター出力" %></td>
+            <td><%= f.text_field :monitor_output, :size=>"30" %></td>
+          </tr>
+          <tr id="chip_input">
+            <td><%= f.label :item_chip, "チップ" %></td>
+            <td><%= f.text_field :chip, :size=>"30" %></td>
+          </tr>
+          <tr id="response_speed_input">
+            <td><%= f.label :item_response_speed, "反応速度" %></td>
+            <td><%= f.text_field :response_speed, :size=>"30" %></td>
+          </tr>
+          <tr id="refresh_rate_input">
+            <td><%= f.label :item_refresh_rate, "リフレッシュレート" %></td>
+            <td><%= f.text_field :refresh_rate, :size=>"30" %></td>
+          </tr>
+          <tr id="input_terminal_input">
+            <td><%= f.label :item_input_terminal, "入力端子" %></td>
+            <td><%= f.text_field :input_terminal, :size=>"30" %></td>
+          </tr>
+          <tr id="key_layout_input">
+            <td><%= f.label :item_key_layout, "キーレイアウト" %></td>
+            <td><%= f.text_field :key_layout, :size=>"30" %></td>
+          </tr>
+          <tr id="key_switch_input">
+            <td><%= f.label :item_key_switch, "キースイッチ" %></td>
+            <td><%= f.text_field :key_switch, :size=>"30" %></td>
+          </tr>
+          <tr>
+            <td><%= f.label :item_quote_source, "引用元URL" %></td>
+            <td><%= f.text_field :quote_source, :size=>"30" %></td>
           </tr>
           <tr>
             <td><%= f.label :sales_status, "販売ステータス" %></td>
@@ -69,3 +133,159 @@
     </div>
   </div>
 </div>
+<script>
+  $("#item_genre_id").change(function(){
+    //alert("ok");
+    value=$(this).val()
+    switch(value){
+      case "1":
+        $("#connection_input").hide();
+        $("#resolution_input").hide();
+        $("#polling_rate_input").hide();
+        $("#size_input").hide();
+        $("#memory_bus_input").hide();
+        $("#memory_type_input").hide();
+        $("#core_clock_input").hide();
+        $("#memory_clock_input").hide();
+        $("#monitor_output_input").hide();
+        $("#chip_input").hide();
+        $("#response_speed_input").hide();
+        $("#refresh_rate_input").hide();
+        $("#input_terminal_input").hide();
+        $("#key_layout_input").hide();
+        $("#key_switch_input").hide();
+        break;
+      case "2":
+        $("#os_input").hide();
+        $("#cpu_input").hide();
+        $("#graphic_input").hide();
+        $("#storage_input").hide();
+        $("#resolution_input").hide();
+        $("#polling_rate_input").hide();
+        $("#response_speed_input").hide();
+        $("#refresh_rate_input").hide();
+        $("#input_terminal_input").hide();
+        $("#key_layout_input").hide();
+        $("#key_switch_input").hide();
+        break;
+      case "3":
+        $("#connection_input").hide();
+        $("#resolution_input").hide();
+        $("#polling_rate_input").hide();
+        $("#size_input").hide();
+        $("#memory_bus_input").hide();
+        $("#os_input").hide();
+        $("#core_clock_input").hide();
+        $("#memory_clock_input").hide();
+        $("#cpu_input").hide();
+        $("#graphic_input").hide();
+        $("#response_speed_input").hide();
+        $("#refresh_rate_input").hide();
+        $("#input_terminal_input").hide();
+        $("#storage_input").hide();
+        $("#key_layout_input").hide();
+        $("#key_switch_input").hide();
+        break;
+      case "4":
+        $("#os_input").hide();
+        $("#cpu_input").hide();
+        $("#graphic_input").hide();
+        $("#memory_input").hide();
+        $("#storage_input").hide();
+        $("#connection_input").hide();
+        $("#resolution_input").hide();
+        $("#polling_rate_input").hide();
+        $("#size_input").hide();
+        $("#memory_bus_input").hide();
+        $("#memory_type_input").hide();
+        $("#core_clock_input").hide();
+        $("#memory_clock_input").hide();
+        $("#monitor_output_input").hide();
+        $("#chip_input").hide();
+        $("#response_speed_input").hide();
+        $("#refresh_rate_input").hide();
+        $("#input_terminal_input").hide();
+        $("#key_layout_input").hide();
+        $("#key_switch_input").hide();
+        break;
+      case "5":
+        $("#os_input").hide();
+        $("#cpu_input").hide();
+        $("#graphic_input").hide();
+        $("#memory_input").hide();
+        $("#storage_input").hide();
+        $("#connection_input").hide();
+        $("#resolution_input").hide();
+        $("#polling_rate_input").hide();
+        $("#size_input").hide();
+        $("#memory_bus_input").hide();
+        $("#memory_type_input").hide();
+        $("#core_clock_input").hide();
+        $("#memory_clock_input").hide();
+        $("#monitor_output_input").hide();
+        $("#chip_input").hide();
+        $("#response_speed_input").hide();
+        $("#refresh_rate_input").hide();
+        $("#input_terminal_input").hide();
+        $("#key_layout_input").hide();
+        $("#key_switch_input").hide();
+        break;
+      case "6":
+        $("#os_input").hide();
+        $("#cpu_input").hide();
+        $("#graphic_input").hide();
+        $("#memory_input").hide();
+        $("#storage_input").hide();
+        $("#memory_bus_input").hide();
+        $("#memory_type_input").hide();
+        $("#core_clock_input").hide();
+        $("#memory_clock_input").hide();
+        $("#monitor_output_input").hide();
+        $("#chip_input").hide();
+        $("#response_speed_input").hide();
+        $("#refresh_rate_input").hide();
+        $("#input_terminal_input").hide();
+        $("#key_layout_input").hide();
+        $("#key_switch_input").hide();
+        break;
+      case "7":
+        $("#os_input").hide();
+        $("#cpu_input").hide();
+        $("#graphic_input").hide();
+        $("#memory_input").hide();
+        $("#storage_input").hide();
+        $("#resolution_input").hide();
+        $("#polling_rate_input").hide();
+        $("#memory_bus_input").hide();
+        $("#memory_type_input").hide();
+        $("#core_clock_input").hide();
+        $("#memory_clock_input").hide();
+        $("#monitor_output_input").hide();
+        $("#chip_input").hide();
+        $("#response_speed_input").hide();
+        $("#refresh_rate_input").hide();
+        $("#input_terminal_input").hide();
+        break;
+      case "8":
+        $("#os_input").hide();
+        $("#cpu_input").hide();
+        $("#graphic_input").hide();
+        $("#memory_input").hide();
+        $("#storage_input").hide();
+        $("#resolution_input").hide();
+        $("#polling_rate_input").hide();
+        $("#memory_bus_input").hide();
+        $("#memory_type_input").hide();
+        $("#core_clock_input").hide();
+        $("#memory_clock_input").hide();
+        $("#monitor_output_input").hide();
+        $("#chip_input").hide();
+        $("#response_speed_input").hide();
+        $("#refresh_rate_input").hide();
+        $("#input_terminal_input").hide();
+        $("#key_layout_input").hide();
+        $("#key_switch_input").hide();
+        break;
+    }
+  })
+</script>

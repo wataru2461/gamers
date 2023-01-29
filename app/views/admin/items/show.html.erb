@@ -8,6 +8,7 @@
   <div class="row justify-content-center">
       <div class="col-lg-4">
         <%= image_tag @item.image, size: "300x200" %>
+        <%= @item.quote_source %>
       </div>
       <div class="col-lg-8">
       <table class="table table-borderless">
@@ -47,6 +48,70 @@
           <tr>
             <td class="col-lg-3"><%= label :item_storage, "ストレージ" %></td>
             <td><%= @item.storage %></td>
+          </tr>
+          <tr>
+            <td class="col-lg-3"><%= label :item_connection, "接続" %></td>
+            <td><%= @item.connection %></td>
+          </tr>
+          <tr>
+            <td class="col-lg-3"><%= label :item_resolution, "解像度" %></td>
+            <td><%= @item.resolution %></td>
+          </tr>
+          <tr>
+            <td class="col-lg-3"><%= label :item_polling_rate, "ポーリングレー" %></td>
+            <td><%= @item.polling_rate %></td>
+          </tr>
+          <tr>
+            <td class="col-lg-3"><%= label :item_size, "サイズ" %></td>
+            <td><%= @item.size %></td>
+          </tr>
+          <tr>
+            <td class="col-lg-3"><%= label :item_memory_bus, "メモリーバス" %></td>
+            <td><%= @item.memory_bus %></td>
+          </tr>
+          <tr>
+            <td class="col-lg-3"><%= label :item_memory_type, "メモリータイプ" %></td>
+            <td><%= @item.memory_type %></td>
+          </tr>
+          <tr>
+            <td class="col-lg-3"><%= label :item_core_clock, "コアクロック" %></td>
+            <td><%= @item.core_clock %></td>
+          </tr>
+          <tr>
+            <td class="col-lg-3"><%= label :item_memory_clock, "メモリークロック" %></td>
+            <td><%= @item.memory_clock %></td>
+          </tr>
+          <tr>
+            <td class="col-lg-3"><%= label :item_monitor_output, "モニター出力" %></td>
+            <td><%= @item.monitor_output %></td>
+          </tr>
+          <tr>
+            <td class="col-lg-3"><%= label :item_chip, "チップ" %></td>
+            <td><%= @item.chip %></td>
+          </tr>
+          <tr>
+            <td class="col-lg-3"><%= label :item_response_speed, "反応速度" %></td>
+            <td><%= @item.response_speed %></td>
+          </tr>
+          <tr>
+            <td class="col-lg-3"><%= label :item_refresh_rate, "リフレッシュレート" %></td>
+            <td><%= @item.refresh_rate %></td>
+          </tr>
+          <tr>
+            <td class="col-lg-3"><%= label :item_input_terminal, "入力端子" %></td>
+            <td><%= @item.input_terminal %></td>
+          </tr>
+          <tr>
+            <td class="col-lg-3"><%= label :item_layout, "キーレイアウト" %></td>
+            <td><%= @item.layout %></td>
+          </tr>
+          <tr>
+            <td class="col-lg-3"><%= label :item_key_switch, "キースイッチ" %></td>
+            <td><%= @item.key_switch %></td>
+          </tr>
+          <tr>
+            <td class="col-lg-3"><%= label :item_quote_source, "引用元URL" %></td>
+            <td><%= @item.key_quote_source %></td>
           </tr>
           <tr>
             <td class="col-lg-3"><%= label :item_status, "販売ステータス" %></td>

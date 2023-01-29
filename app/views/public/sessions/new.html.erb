@@ -6,7 +6,7 @@
 
   <div class="row justify-content-center">
     <div class="col-md-6 offset-md-1">
-      <h5 class="m-4 text-black bg-info d-inline-block">会員の方はこちらからログイン</h5>
+      <h5 class="m-4">会員の方はこちらからログイン</h5>
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
       <table class="table table-borderless">
@@ -28,7 +28,7 @@
         </tbody>
       </table>
       <% end %>
-      <h5 class="m-4 text-black bg-info d-inline-block">会員登録がお済みでない方は</h5></br>
+      <h5 class="m-4 text-black">会員登録がお済みでない方は</h5></br>
       <%= link_to "こちら", new_customer_registration_path %> から新規登録を行なってください。
     </div>
   </div>
