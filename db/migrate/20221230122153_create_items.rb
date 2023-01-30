@@ -26,7 +26,7 @@ class CreateItems < ActiveRecord::Migration[6.1]
       t.string :input_terminal, null: false
       t.string :key_layout, null: false
       t.string :key_switch, null: false
-      t.string :quote_source, null: false
+      t.text :quote_source, null: false
       t.boolean :is_active, null: false, default: true
       
       t.timestamps null: false

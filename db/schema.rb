@@ -120,7 +120,7 @@ ActiveRecord::Schema.define(version: 2023_01_02_102537) do
     t.string "input_terminal", null: false
     t.string "key_layout", null: false
     t.string "key_switch", null: false
-    t.string "quote_source", null: false
+    t.text "quote_source", null: false
     t.boolean "is_active", default: true, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
