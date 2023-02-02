@@ -34,7 +34,7 @@ class Admin::ItemsController < ApplicationController
   end
   
   def item_params
-    params.require(:item).permit(:genre_id, :price, :image, :name, :introduction, :is_active, :os, :cpu, :graphics, :memory, :storage, :connection, :resolution, :polling_rate, :size, :memory_bus, :memory_type, :core_clock, :memory_clock, :monitor_output, :chip, :response_speed, :refresh_rate, :input_terminal, :key_layout, :key_switch)
+    params.require(:item).permit(:genre_id, :price, :image, :name, :introduction, :is_active, :os, :cpu, :graphics, :memory, :storage, :connection, :resolution, :polling_rate, :size, :memory_bus, :memory_type, :core_clock, :memory_clock, :monitor_output, :chip, :response_speed, :refresh_rate, :input_terminal, :key_layout, :key_switch, :quote_source)
   end
   
 end
