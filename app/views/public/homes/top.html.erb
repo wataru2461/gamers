@@ -20,17 +20,17 @@
         を手にしよう!!
       </h2>
     </div>
-    <div class="col-lg-6">
-      <h3>新着商品</h3>
+    <div class="col-lg-6 flex-row d-flex">
       <div class="container">
+        <h3>新着商品</h3>
         <div class="row">
           <% @items.each do |item| %>
-            <div class="col-3">
+            <div class="col-6">
               <%= link_to public_item_path(item.id) do %>
-                <%= image_tag item.image, size: "200x150" %>
+                <%= image_tag item.image, size: "220x150" %>
               <% end %>
               <%= item.name %>
-              <%= item.price %>
+              ¥<%= item.price %>
             </div>
           <% end %>
         </div>

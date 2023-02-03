@@ -40,7 +40,7 @@ class Item < ApplicationRecord
   end
 
   def show_size?
-    graphic_board? || keyboard? || mouse? || headset? || monitor?
+    keyboard? || mouse? || headset? || monitor?
   end
   
   def show_memory_bus?

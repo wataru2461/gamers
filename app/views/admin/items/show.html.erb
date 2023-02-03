@@ -8,7 +8,6 @@
   <div class="row justify-content-center">
       <div class="col-lg-4">
         <%= image_tag @item.image, size: "300x250" %>
-        <%= @item.quote_source %>
       </div>
       <div class="col-lg-8">
       <table class="table table-borderless table-sm">
@@ -159,6 +158,10 @@
             <% end %>
             </td>
           </tr>
+          <tr>
+            <td class="col-lg-3 font-weight-bold text-center border-bottom border-primary"><%= label :item_quote_source, "引用元URL" %></td>
+            <td class="border-bottom border-primary"><%= @item.quote_source %></td>
+            </tr>
         </tbody>
       </table>
     </div>
