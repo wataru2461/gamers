@@ -9,5 +9,6 @@ class Public::ItemsController < ApplicationController
     @genres = Genre.all
     @item = Item.find(params[:id])
     @cart_item = CartItem.new
+    @item_comment = ItemComment.new
   end
 end

@@ -38,16 +38,16 @@ class Public::OrdersController < ApplicationController
     @order.postage = 800
     @order.payment_method = params[:order][:payment_method]
     if select_address == '0'
-      @post_code = current_customer.postal_code
+      @postal_code = current_customer.postal_code
       @address = current_customer.address
       @name = current_customer.last_name + current_customer.first_name
     elsif select_address == '1'
       address = Address.find(params[:order][:address_id])
-      @post_code = address.postal_code
+      @postal_code = address.postal_code
       @address = address.address
       @name = address.name
     elsif select_address == '2'
-      @post_code = params[:order][:postal_code]
+      @postal_code = params[:order][:postal_code]
       @address = params[:order][:address]
       @name = params[:order][:address_name]
     else
@@ -63,6 +63,6 @@ class Public::OrdersController < ApplicationController
 
   private
   def order_params
-    params.require(:order).permit(:payment_method, :post_code, :address, :name, :customer_id, :billing_amount, :status, :postage)
+    params.require(:order).permit(:payment_method, :postal_code, :address, :name, :customer_id, :billing_amount, :status, :postage)
   end
 end

@@ -4,8 +4,13 @@ class Item < ApplicationRecord
   belongs_to :genre
   has_many :cart_items, dependent: :destroy
   has_many :order_details, dependent: :destroy
+  has_many :item_comments, dependent: :destroy
+  
+  def with_tax_price
+    (price * 1.1).floor
+  end
  
-  delegate :pc?, :graphic_board?, :mother_board?, :desk?, :chair?, :keyboard?, :mouse?, :headset?, :monitor?, to: :genre
+  delegate :pc?, :graphic_board?, :mother_board?, :desk?, :chair?, :key_board?, :mouse?, :headset?, :monitor?, to: :genre
   
   def show_os?
     pc?
@@ -28,7 +33,7 @@ class Item < ApplicationRecord
   end
   
   def show_connection?
-    graphic_board? || keyboard? || mouse? || headset?
+    graphic_board? || key_board? || mouse? || headset?
   end
   
   def show_resolution?
@@ -40,11 +45,11 @@ class Item < ApplicationRecord
   end
 
   def show_size?
-    keyboard? || mouse? || headset? || monitor?
+    key_board? || mouse? || headset? || monitor?
   end
   
   def show_memory_bus?
-    mother_board?
+   graphic_board? 
   end
   
   def show_memory_type?
@@ -80,10 +85,10 @@ class Item < ApplicationRecord
   end
   
   def show_key_layout?
-    keyboard?
+    key_board?
   end
   
   def show_key_switch?
-    keyboard?
+    key_board?
   end
 end

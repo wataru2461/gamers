@@ -7,9 +7,9 @@
   <div class="row justify-content-center">
     <div class="col-md-7 offset-md-1">
       <div class="container">
-        <table class="table">
+        <table class="table table-borderless">
           <thead>
-            <tr class="bg-light">
+            <tr class="bg-primary ttext-white">
               <th>会員ID</th>
               <th>氏名</th>
               <th>メールアドレス</th>
@@ -18,7 +18,7 @@
           </thead>
           <% @customers.each do |customer| %>
           <tbody>
-            <tr>
+            <tr class="border-bottom border-primary">
               <td><%= customer.id %></td>
               <td>
                 <%= link_to admin_customer_path(customer.id) do %>
@@ -26,11 +26,11 @@
                 <% end %>
               </td>
               <td><%= customer.email %></td>
-              <td class="text-success">
+              <td>
                 <% if customer.is_deleted == false %>
-                  有効
+                  <div class="text-success">有効</div>
                 <% else %>
-                  退会
+                  <div class="text-danger">退会</div>
                 <% end %>
               </td>
             </tr>

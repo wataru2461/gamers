@@ -22,7 +22,7 @@ class Genre < ApplicationRecord
     name == "ゲーミングチェア"
   end
   
-  def keyboard?
+  def key_board?
     name == "キーボード"
   end
   

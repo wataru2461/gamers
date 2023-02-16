@@ -10,9 +10,9 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-md-9 offset-md-1">
-      <table class="table center-block ">
+      <table class="table table-sm table-borderless">
         <thead>
-          <tr>
+          <tr class="bg-primary text-white">
             <th>商品ID</th>
             <th>商品名</th>
             <th>税抜価格</th>
@@ -22,7 +22,7 @@
         </thead>
         <tbody>
         <% @items.each do |item| %>
-          <tr>
+          <tr class="border-bottom border-primary">
             <td><%= item.id %></td>
             <td>
               <%= link_to admin_item_path(item.id) do %>

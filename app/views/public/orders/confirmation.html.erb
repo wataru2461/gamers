@@ -7,22 +7,22 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-8">
-      <table class="table">
-        <thead class="thead-light">
+      <table class="table table-borderless">
+        <thead>
           <tr>
-            <th class="border border-secondary">商品名</th>
-            <th class="border border-secondary">単価（税込）</th>
-            <th class="border border-secondary">数量</th>
-            <th class="border border-secondary">小計</th>
+            <th class="border-bottom border-primary">商品名</th>
+            <th class="border-bottom border-primary">単価（税込）</th>
+            <th class="border-bottom border-primary">数量</th>
+            <th class="border-bottom border-primary">小計</th>
           </tr>
         </thead>
         <tbody>
           <% @cart_items.each do |cart_item| %>
           <tr>
-            <td class="border border-secondary"><%= cart_item.item.name %></td>
-            <td class="border border-secondary"><%= cart_item.item.with_tax_price%></td>
-            <td class="border border-secondary"><%= cart_item.amount %></td>
-            <td class="border border-secondary"><%= cart_item.subtotal%></td>
+            <td class="border-bottom border-primary"><%= cart_item.item.name %></td>
+            <td class="border-bottom border-primary">¥<%= cart_item.item.with_tax_price%></td>
+            <td class="border-bottom border-primary"><%= cart_item.amount %></td>
+            <td class="border-bottom border-primary">¥<%= cart_item.subtotal%></td>
             <% @total +=  cart_item.subtotal %>
           </tr>
           <% end %>
@@ -30,21 +30,21 @@
       </table>
     </div>
     <div class="col-lg-4">
-      <table class="table">
+      <table class="table table-borderless">
         <tbody>
           <tr>
-            <td class="border border-secondary col-lg-6 table-active">送料</td>
-            <td class="border border-secondary"><%= @order.postage %></td>
+            <td class="border-bottom border-primary col-lg-6">送料</td>
+            <td class="border-bottom border-primary">¥<%= @order.postage %></td>
           </tr>
           <tr>
-            <td class="border border-secondary col-lg-6 table-active">商品合計</td>
-            <td class="border border-secondary">
-              <%= @total %>
+            <td class="border-bottom border-primary col-lg-6">商品合計</td>
+            <td class="border-bottom border-primary">
+              ¥<%= @total %>
             </td>
           </tr>
           <tr>
-            <td class="border border-secondary col-lg-6 table-active">請求金額</td>
-            <td class="border border-secondary"><%= @total + @order.postage %></td>
+            <td class="border-bottom border-primary col-lg-6">請求金額</td>
+            <td class="border-bottom border-primary">¥<%= @total + @order.postage %></td>
           </tr>
         </tbody>
       </table>
@@ -54,7 +54,7 @@
       <%= Order.payment_methods_i18n[ @order.payment_method ] %></br>
 
       <h4 class="font-weight-bold mt-4">お届け先</h4>
-      <%= @post_code + @address + @name %>
+      <%= @postal_code + @address + @name %>
     </div>
   </div>
   <div class="row justify-content-center">

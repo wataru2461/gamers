@@ -9,41 +9,41 @@
     <div class="col-md-7">
       <table class="table table-borderless table-sm">
         <tbody>
-          <tr>
+          <tr class="border-bottom border-primary">
             <td class="col-lg-4"><%= label :customer_id, "会員ID" %></td>
             <td><%= @customer.id %></td>
           </tr>
-          <tr>
+          <tr class="border-bottom border-primary">
             <td class="col-lg-4"><%= label :customer_name, "氏名" %></td>
             <td><%= @customer.last_name  + @customer.first_name%></td>
           </tr>
-          <tr>
+          <tr class="border-bottom border-primary">
             <td class="col-lg-4"><%= label :item_introduction, "フリガナ" %></td>
             <td><%= @customer.last_name_kana + @customer.first_name_kana %></td>
           </tr>
-          <tr>
+          <tr class="border-bottom border-primary">
             <td class="col-lg-4"><%= label :item_genre, "郵便番号" %></td>
             <td><%= @customer.postal_code %></td>
           </tr>
-          <tr>
+          <tr class="border-bottom border-primary">
             <td class="col-lg-4"><%= label :item_price, "住所" %></td>
             <td><%= @customer.address %></td>
           </tr>
-          <tr>
+          <tr class="border-bottom border-primary">
             <td class="col-lg-4"><%= label :customer_price, "電話番号" %></td>
             <td><%= @customer.telephone_number %></td>
           </tr>
-          <tr>
+          <tr class="border-bottom border-primary">
             <td class="col-lg-4"><%= label :customer_price, "メールアドレス" %></td>
             <td><%= @customer.email %></td>
           </tr>
-          <tr>
+          <tr class="border-bottom border-primary">
             <td class="col-lg-2"><%= label :customer_status, "会員ステータス" %></td>
-            <td class="text-successa">
+            <td>
               <% if @customer.is_deleted == true %>
-                退会
+                <div class="text-danger">退会</div>
               <% else %>
-                有効
+                <div class="text-success">有効</div>
               <% end %>
             </td>
           </tr>

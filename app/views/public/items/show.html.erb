@@ -7,24 +7,169 @@
       <table class="table table-borderless">
         <tbody>
           <tr>
-            <td class="h2 font-weight-bold"><%= @item.name %></td>
+            <td class="h2 border-bottom border-primary text-center", colspan="2"><%= @item.name %></td>
           </tr>
           <tr>
-            <td class="h4 font-weight-bolder"><%= @item.introduction %></td>
+            <td class="col-lg-3 font-weight-bold text-center border-bottom border-primary"><%= label :item_introduction, "商品説明" %></td>
+            <td class="border-bottom border-primary", colspan="2"><%= @item.introduction %></td>
           </tr>
           <tr>
-            <td class="font-weight-bolder">¥<%= @item.with_tax_price %>（税込）</td>
+            <td class="col-lg-3 font-weight-bold text-center border-bottom border-primary"><%= label :item_with_tax_price, "価格" %></td>
+            <td class="border-bottom border-primary">¥<%= @item.with_tax_price %>（税込）</td>
           </tr>
+          <% if @item.show_os? %>
+            <tr>
+              <td class="col-lg-3 font-weight-bold text-center border-bottom border-primary"><%= label :item_os, "OS" %></td>
+              <td class="border-bottom border-primary"><%= @item.os %></td>
+            </tr>
+          <% end %>
+          <% if @item.show_cpu? %>
+            <tr>
+              <td class="col-lg-3 font-weight-bold text-center border-bottom border-primary"><%= label :item_cpu, "CPU" %></td>
+              <td class="border-bottom border-primary"><%= @item.cpu %></td>
+            </tr>
+          <% end %>
+          <% if @item.show_graphics? %>
+            <tr>
+              <td class="col-lg-3 font-weight-bold text-center border-bottom border-primary"><%= label :item_graphics, "グラフィック" %></td>
+              <td class="border-bottom border-primary"><%= @item.graphics %></td>
+            </tr>
+          <% end %>
+          <% if @item.show_memory? %>
+            <tr>
+              <td class="col-lg-3 font-weight-bold text-center border-bottom border-primary"><%= label :item_memory, "メモリ" %></td>
+              <td class="border-bottom border-primary"><%= @item.memory %></td>
+            </tr>
+          <% end %>
+          <% if @item.show_storage? %>
+            <tr>
+              <td class="col-lg-3 font-weight-bold text-center border-bottom border-primary"><%= label :item_storage, "ストレージ" %></td>
+              <td class="border-bottom border-primary"><%= @item.storage %></td>
+            </tr>
+          <% end %>
+          <% if @item.show_connection? %>
+            <tr>
+              <td class="col-lg-3 font-weight-bold text-center border-bottom border-primary"><%= label :item_connection, "接続" %></td>
+              <td class="border-bottom border-primary"><%= @item.connection %></td>
+            </tr>
+          <% end %>
+          <% if @item.show_resolution? %>
+            <tr>
+              <td class="col-lg-3 font-weight-bold text-center border-bottom border-primary"><%= label :item_resolution, "解像度" %></td>
+              <td class="border-bottom border-primary"><%= @item.resolution %></td>
+            </tr>
+          <% end %>
+          <% if @item.show_polling_rate? %>
+            <tr>
+              <td class="col-lg-3 font-weight-bold text-center border-bottom border-primary"><%= label :item_polling_rate, "ポーリングレー" %></td>
+              <td class="border-bottom border-primary"><%= @item.polling_rate %></td>
+            </tr>
+          <% end %>
+          <% if @item.show_size? %>
+            <tr>
+              <td class="col-lg-3 font-weight-bold text-center border-bottom border-primary"><%= label :item_size, "サイズ" %></td>
+              <td class="border-bottom border-primary"><%= @item.size %></td>
+            </tr>
+          <% end %>
+          <% if @item.show_memory_bus? %>
+            <tr>
+              <td class="col-lg-3 font-weight-bold text-center border-bottom border-primary"><%= label :item_memory_bus, "メモリーバス" %></td>
+              <td class="border-bottom border-primary"><%= @item.memory_bus %></td>
+            </tr>
+          <% end %>
+          <% if @item.show_memory_type? %>
+            <tr>
+              <td class="col-lg-3 font-weight-bold text-center border-bottom border-primary"><%= label :item_memory_type, "メモリータイプ" %></td>
+              <td class="border-bottom border-primary"><%= @item.memory_type %></td>
+            </tr>
+          <% end %>
+          <% if @item.show_core_clock? %>
+            <tr>
+              <td class="col-lg-3 font-weight-bold text-center border-bottom border-primary"><%= label :item_core_clock, "コアクロック" %></td>
+              <td class="border-bottom border-primary"><%= @item.core_clock %></td>
+            </tr>
+          <% end %>
+          <% if @item.show_memory_clock? %>
+            <tr>
+              <td class="col-lg-3 font-weight-bold text-center border-bottom border-primary"><%= label :item_memory_clock, "メモリークロック" %></td>
+              <td class="border-bottom border-primary"><%= @item.memory_clock %></td>
+            </tr>
+          <% end %>
+          <% if @item.show_monitor_output? %>
+            <tr>
+              <td class="col-lg-3 font-weight-bold text-center border-bottom border-primary"><%= label :item_monitor_output, "モニター出力" %></td>
+              <td class="border-bottom border-primary"><%= @item.monitor_output %></td>
+            </tr>
+          <% end %>
+          <% if @item.show_chip? %>
+            <tr>
+              <td class="col-lg-3 font-weight-bold text-center border-bottom border-primary"><%= label :item_chip, "チップ" %></td>
+              <td class="border-bottom border-primary"><%= @item.chip %></td>
+            </tr>
+          <% end %>
+          <% if @item.show_response_speed? %>
+            <tr>
+              <td class="col-lg-3 font-weight-bold text-center border-bottom border-primary"><%= label :item_response_speed, "反応速度" %></td>
+              <td class="border-bottom border-primary"><%= @item.response_speed %></td>
+            </tr>
+          <% end %>
+          <% if @item.show_refresh_rate? %>
+            <tr>
+              <td class="col-lg-3 font-weight-bold text-center border-bottom border-primary"><%= label :item_refresh_rate, "リフレッシュレート" %></td>
+              <td class="border-bottom border-primary"><%= @item.refresh_rate %></td>
+            </tr>
+          <% end %>
+          <% if @item.show_input_terminal? %>
+            <tr>
+              <td class="col-lg-3 font-weight-bold text-center border-bottom border-primary"><%= label :item_input_terminal, "入力端子" %></td>
+              <td class="border-bottom border-primary"><%= @item.input_terminal %></td>
+            </tr>
+          <% end %>
+          <% if @item.show_key_layout? %>
+            <tr>
+              <td class="col-lg-3 font-weight-bold text-center border-bottom border-primary"><%= label :item_layout, "キーレイアウト" %></td>
+              <td class="border-bottom border-primary"><%= @item.key_layout %></td>
+            </tr>
+          <% end %>
+          <% if @item.show_key_switch? %>
+            <tr>
+              <td class="col-lg-3 font-weight-bold text-center border-bottom border-primary"><%= label :item_key_switch, "キースイッチ" %></td>
+              <td class="border-bottom border-primary"><%= @item.key_switch %></td>
+            </tr>
+          <% end %>
           <tr>
-            <td>
             <%= form_with model: @cart_item, url: public_cart_items_path do |f| %>
+            <td class="border-bottom border-primary">
               <%= f.hidden_field :item_id, :value => @item.id %>
               <%= f.hidden_field :customer_id, :value => current_customer.id %>
               <%= f.select :amount, *[1..9], include_blank: "個数選択" %>
-              <%= f.submit 'カートに入れる', class: "btn btn-sm btn-success" %>
-            <% end %>
             </td>
+            <td class="border-bottom border-primary">
+              <%= f.submit 'カートに入れる', class: "btn btn-sm btn-success" %>
+            </td>
+            <% end %>
            </tr>
+          <tr>
+            <td>
+              <p>コメント件数：<%= @item.item_comments.count %></p>
+              <% @item.item_comments.each do |item_comment| %>
+                <%= item_comment.customer.last_name %>
+                <%= item_comment.created_at.strftime('%Y/%m/%d') %><%= item_comment.comment %>
+                <% if item_comment.customer == current_customer %>
+                  <%= link_to "削除", public_item_item_comment_path(item_comment.item, item_comment), method: :delete %>
+                <% end %>
+                </br>
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <%= form_with(model:[@item,@item_comment], url:public_item_item_comments_path(@item.id)) do |f| %>
+                <%= f.text_area :comment, rows: '5', placeholder: "コメントをここに" %>
+                <%= f.submit "送信する" %>
+              <% end %>
+            </td>
+          </tr>
         </tbody>
       </table>
     </div>

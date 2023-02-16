@@ -35,8 +35,8 @@
     <div class="col-md-10">
       
       <table class="table table-borderless">
-        <thead class="bg-light">
-          <tr>
+        <thead>
+          <tr class="border-bottom border-primary">
            <th>郵便番号</th>
            <th>住所</th>
            <th>宛名</th>
@@ -45,19 +45,21 @@
         </thead>
         <tbody>
           <% @addresses.each do |address| %>
-          <tr>
-            <td class="col-md-2"><%= address.postal_code %></td>
-            <td><%= address.address %></td>
-            <td class="col-md-2"><%= address.name %></td>            
-            <td class="col-md-3">
-              <%= link_to edit_public_address_path(address.id), class: 'btn btn-success mr-2' do %>
-                編集する
-              <% end %>
-              <%= link_to public_addresses_path(address.id), method: :delete, class: 'btn btn-danger' do %>
-                削除する
-              <% end %>
-            </td>
-          </tr>
+            <% if address.customer == current_customer %>
+            <tr class="border-bottom border-primary">
+              <td class="col-md-2"><%= address.postal_code %></td>
+              <td><%= address.address %></td>
+              <td class="col-md-2"><%= address.name %></td>            
+              <td class="col-md-3">
+                <%= link_to edit_public_address_path(address.id), class: 'btn btn-success mr-2' do %>
+                  編集する
+                <% end %>
+                <%= link_to public_addresses_path(address.id), method: :delete, class: 'btn btn-danger' do %>
+                  削除する
+                <% end %>
+              </td>
+            </tr>
+            <% end %>
           <% end %>
         </tbody>
       </table>
