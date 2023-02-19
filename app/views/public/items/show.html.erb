@@ -166,7 +166,7 @@
             <td>
               <%= form_with(model:[@item,@item_comment], url:public_item_item_comments_path(@item.id)) do |f| %>
                 <%= f.text_area :comment, rows: '5', placeholder: "コメントをここに" %>
-                <%= f.submit "送信する" %>
+                <%= f.submit "送信する", class: "btn btn-sm btn-success" %>
               <% end %>
             </td>
           </tr>
