@@ -6,26 +6,26 @@ class CreateItems < ActiveRecord::Migration[6.1]
       t.string :name, null: false
       t.text :introduction, null: false
       t.integer :price, null: false
-      t.string :os, null: false
-      t.string :cpu, null: false
-      t.string :graphics, null: false
-      t.string :memory, null: false
-      t.string :storage, null: false
-      t.string :connection, null: false
-      t.string :resolution, null: false
-      t.string :polling_rate, null: false
-      t.string :size, null: false
-      t.string :memory_bus, null: false
-      t.string :memory_type, null: false
-      t.string :core_clock, null: false
-      t.string :memory_clock, null: false
-      t.string :monitor_output, null: false
-      t.string :chip, null: false
-      t.string :response_speed, null: false
-      t.string :refresh_rate, null: false
-      t.string :input_terminal, null: false
-      t.string :key_layout, null: false
-      t.string :key_switch, null: false
+      t.string :os
+      t.string :cpu
+      t.string :graphics
+      t.string :memory
+      t.string :storage
+      t.string :connection
+      t.string :resolution
+      t.string :polling_rate
+      t.string :size
+      t.string :memory_bus
+      t.string :memory_type
+      t.string :core_clock
+      t.string :memory_clock
+      t.string :monitor_output
+      t.string :chip
+      t.string :response_speed
+      t.string :refresh_rate
+      t.string :input_terminal
+      t.string :key_layout
+      t.string :key_switch
       t.text :quote_source, null: false
       t.boolean :is_active, null: false, default: true
       
