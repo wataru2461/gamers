@@ -1,4 +1,6 @@
 class Public::OrdersController < ApplicationController
+  before_action :authenticate_customer!, except: [:top]
+  
   def new
     if current_customer.cart_items.blank?
       redirect_to public_cart_items_path
@@ -21,7 +23,7 @@ class Public::OrdersController < ApplicationController
       order_detail.save!
     end
     cart_items.destroy_all
-    redirect_to public_orders_completion_path
+    redirect_to orders_completion_path
   end
 
   def index

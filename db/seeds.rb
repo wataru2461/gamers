@@ -10,6 +10,10 @@ Admin.create!(
   email: "test@test", password: "aaaaaa"
 )
 
+Customer.create!(
+  email: "takahashi@ikoi", password: "aaaaaa"
+)
+
 Genre.create!(
   [
     {name: 'ゲーミングPC'},

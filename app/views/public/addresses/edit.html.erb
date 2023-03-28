@@ -8,7 +8,7 @@
 <div class="container">
   <div class="row position-absolutestart-0">
     <div class="col-md-10">
-      <%= form_with model: @address, url: public_addresses_path(@address.id) do |f| %>
+      <%= form_with model: @address, url: address_path(@address.id) do |f| %>
       <table class="table table-borderless">
         <tbody>
           <tr>
@@ -22,7 +22,7 @@
           <tr>
             <td><%= f.label :address_name, "宛名" %></td>
             <td><%= f.text_field :name, placeholder: "令和道子" %></td>
-            <td><%= f.submit '新規登録' %></td>
+            <td><%= f.submit '更新', class: 'btn btn-success' %></td>
           </tr>
         </tbody>
       </table>

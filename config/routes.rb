@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     resources :order_details, only: [:update]
   end
 
-  namespace :public do
+  scope module: :public do
     get 'homes/top' => 'homes#top'
     get 'homes/about'
     get "search" => "searches#search"

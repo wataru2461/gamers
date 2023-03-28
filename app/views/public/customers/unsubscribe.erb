@@ -16,10 +16,10 @@
 
 <div class="container">
   <div class="row justify-content-center display-2 text-center", style="margin-top: 40px">
-    <%= link_to public_customers_path, class: 'btn btn-primary col-2' do %>
+    <%= link_to customers_path, class: 'btn btn-primary col-2' do %>
     退会しない
     <% end %>
-    <%= link_to  public_customers_withdraw_path, method: :patch, class: 'btn btn-danger ml-4 col-2', "data-confirm" => "本当に退会しますか?" do %>
+    <%= link_to  customers_withdraw_path, method: :patch, class: 'btn btn-danger ml-4 col-2', "data-confirm" => "本当に退会しますか?" do %>
     退会する
     <% end %>
   </div>

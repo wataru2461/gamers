@@ -1,4 +1,6 @@
 class Admin::OrdersController < ApplicationController
+  before_action :authenticate_admin!, except: [:sessions]
+  
   def show
     @order = Order.find(params[:id])
   end

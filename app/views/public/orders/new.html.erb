@@ -7,7 +7,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <%= form_with model: @order, url: public_orders_confirmation_path do |f| %>
+      <%= form_with model: @order, url: orders_confirmation_path do |f| %>
       <h4 class="font-weight-bold m-0">支払方法</h4></br>
         <%= f.radio_button :payment_method, Order.payment_methods.key(0), class: "ml-5" %>
         <%= f.label :payment_method, Order.payment_methods_i18n[:credit_card] %></br>

@@ -138,7 +138,7 @@
             </tr>
           <% end %>
           <tr>
-            <%= form_with model: @cart_item, url: public_cart_items_path do |f| %>
+            <%= form_with model: @cart_item, url: cart_items_path do |f| %>
             <td class="border-bottom border-primary">
               <%= f.hidden_field :item_id, :value => @item.id %>
               <%= f.hidden_field :customer_id, :value => current_customer.id %>
@@ -156,7 +156,7 @@
                 <%= item_comment.customer.last_name %>
                 <%= item_comment.created_at.strftime('%Y/%m/%d') %><%= item_comment.comment %>
                 <% if item_comment.customer == current_customer %>
-                  <%= link_to "削除", public_item_item_comment_path(item_comment.item, item_comment), method: :delete %>
+                  <%= link_to "削除", item_item_comment_path(item_comment.item, item_comment), method: :delete, "data-confirm" => "本当に削除しますか？" %>
                 <% end %>
                 </br>
               <% end %>
@@ -164,7 +164,7 @@
           </tr>
           <tr>
             <td>
-              <%= form_with(model:[@item,@item_comment], url:public_item_item_comments_path(@item.id)) do |f| %>
+              <%= form_with(model:[@item,@item_comment], url: item_item_comments_path(@item.id)) do |f| %>
                 <%= f.text_area :comment, rows: '5', placeholder: "コメントをここに" %>
                 <%= f.submit "送信する", class: "btn btn-sm btn-success" %>
               <% end %>
