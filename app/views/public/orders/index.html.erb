@@ -35,7 +35,7 @@
                 <td class="text-left align-middle">¥<%= order.billing_amount.to_i + 800 %>（送料込）</td>
                 <td class="text-left align-middle"><%= order.status_i18n %></td>
                 <td class="text-left align-middle">
-                <%= link_to "表示する", order_path(order.id), class: "btn btn-sm btn-success align-middle"%>
+                <%= link_to "表示する", public_order_path(order.id), class: "btn btn-sm btn-success align-middle"%>
                 </td>
               </tr>
             <% end %>

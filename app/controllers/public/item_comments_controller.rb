@@ -6,12 +6,12 @@ class Public::ItemCommentsController < ApplicationController
     comment = current_customer.item_comments.new(item_comment_params)
     comment.item_id = item.id
     comment.save
-    redirect_to item_path(item)
+    redirect_to public_item_path(item)
   end
   
   def destroy
     ItemComment.find(params[:id]).destroy
-    redirect_to item_path(params[:item_id])
+    redirect_to public_item_path(params[:item_id])
   end
 
   private

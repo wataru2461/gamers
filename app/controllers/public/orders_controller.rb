@@ -23,7 +23,7 @@ class Public::OrdersController < ApplicationController
       order_detail.save!
     end
     cart_items.destroy_all
-    redirect_to orders_completion_path
+    redirect_to public_orders_completion_path
   end
 
   def index
