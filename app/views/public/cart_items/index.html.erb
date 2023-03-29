@@ -32,7 +32,7 @@
               <% end %>
             </td>
             <td class="border-bottom border-primary"><%= cart_item.subtotal%></td>
-            <td class="border-bottom border-primary"><%= link_to "削除する", public_cart_item_path(cart_item.id), class: "btn btn-sm btn-danger ", method: :delete, "data-confirm" => "本当に削除しますか?" %></td>
+            <td class="border-bottom border-primary"><%= link_to "削除する", public_cart_item_path(cart_item.id), class: "btn btn-sm btn-danger ", method: :delete, "data-confirm" => "Are you sure?" %></td>
             <% @total +=  cart_item.subtotal %>
           </tr>
           <% end %>
@@ -42,7 +42,7 @@
         <td><%= link_to "買い物を続ける", public_homes_top_path, class: "btn btn-sm btn-primary"%></td>
         <td></td>
         <td></td>
-        <td class="border-bottom border-primary text-center col-lg-2"><%= label :total_amount, "合計金額" %></td>
+        <td class="border-bottom border-primary text-center bg-light col-lg-2"><%= label :total_amount, "合計金額" %></td>
         <td class="border-bottom border-primary col-lg-2"><%= @total %></td>
       </table>
       <div class="row justify-content-center">
